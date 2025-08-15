@@ -1,0 +1,58 @@
+<div class="form-card">
+  <h2 class="form-title">{{ personaInicial?.id ? 'Editar Persona' : 'Crear datos de Persona' }}</h2>
+  <form [formGroup]="personaForm" (ngSubmit)="guardar()" novalidate class="formulario-persona">
+    <div class="form-group">
+      <label for="nombre">Nombre:</label>
+      <input id="nombre" type="text" formControlName="nombre" />
+    </div>
+    <div class="form-group">
+      <label for="apellidoPaterno">Apellido paterno:</label>
+      <input id="apellidoPaterno" type="text" formControlName="apellidoPaterno" />
+    </div>
+    <div class="form-group">
+      <label for="apellidoMaterno">Apellido materno:</label>
+      <input id="apellidoMaterno" type="text" formControlName="apellidoMaterno" />
+    </div>
+    <div class="form-group">
+      <label for="correo">Correo electrónico:</label>
+      <input id="correo" type="email" formControlName="correo" />
+    </div>
+    <div class="form-group">
+      <label for="telefono">Teléfono:</label>
+      <input id="telefono" type="text" formControlName="telefono" />
+    </div>
+    <div class="form-group">
+      <label for="fotoUrl">Foto (URL pública):</label>
+      <input id="fotoUrl" type="text" formControlName="fotoUrl" placeholder="https://..." />
+    </div>
+    <div class="form-group" *ngIf="personaForm.value.fotoUrl">
+      <label>Vista previa:</label><br />
+      <img
+        [src]="personaForm.value.fotoUrl"
+        alt="Foto de {{ personaForm.value.nombre }}"
+        width="100"
+        height="100"
+        loading="lazy"
+        (error)="mostrarFallback = true"
+        *ngIf="!mostrarFallback"
+      />
+      <img
+        src="assets/img/fallback.jpg"
+        alt="Imagen no disponible"
+        width="100"
+        height="100"
+        *ngIf="mostrarFallback"
+      />
+    </div>
+    <div class="form-group">
+      <label for="estado">Estado:</label>
+      <select id="estado" formControlName="estado">
+        <option *ngFor="let estado of estadosDisponibles" [value]="estado">{{ estado }}</option>
+      </select>
+    </div>
+    <div class="form-actions">
+      <button type="submit" [disabled]="personaForm.invalid" class="btn-guardar">Guardar persona</button>
+    </div>
+  </form>
+</div>
+

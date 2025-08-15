@@ -1,0 +1,28 @@
+<div *ngIf="personas$ | async as personas; else cargando">
+  <div *ngIf="personas.length > 0; else sinDatos" class="lista-personas">
+    <div *ngFor="let persona of personas" class="item-persona card">
+      <div class="card-header">
+        <img [src]="persona.fotoUrl" alt="Foto {{ persona.nombre }}" class="foto-persona" loading="lazy"/>
+        <h3>{{ persona.nombre }}</h3>
+      </div>
+      <div class="card-body">
+        <p><strong>ID:</strong> <span>{{ persona.id }}</span></p>
+        <p><strong>Correo:</strong> <span>{{ persona.correo }}</span></p>
+        <p><strong>Teléfono:</strong> <span>{{ persona.telefono }}</span></p>
+        <p><strong>Estado:</strong> <span>{{ persona.estado }}</span></p>
+      </div>
+      <div class="card-actions">
+        <button (click)="eliminar(persona.id)" class="btn-eliminar">🗑️ Eliminar</button>
+        <a [routerLink]="['/personas/editar', persona.id]" role="button" class="btn-editar">✏️ Editar</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #cargando>
+  <p>🔄 Cargando personas...</p>
+</ng-template>
+
+<ng-template #sinDatos>
+  <p>⚠️ No hay personas registradas.</p>
+</ng-template>

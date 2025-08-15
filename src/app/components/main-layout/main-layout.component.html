@@ -1,0 +1,21 @@
+<div class="layout-container">
+<aside class="menu-lateral">
+  <div class="menu-header">
+    <img src="assets/img/logo.webp" alt="" class="menu-logo" />
+    <h2>Menu principal</h2>
+  </div>
+  <nav>
+    <ul>
+      <li><a routerLink="/personas/crear"><span class="icon">➕</span> <span>Crear Persona</span></a></li>
+      <li><a routerLink="/personas/listar"><span class="icon">📋</span> <span>Listar Personas</span></a></li>
+      <li><a routerLink="/tareas/crear"><span class="icon">📝</span> <span>Crear Tarea</span></a></li>
+      <li><a routerLink="/categorias/crear"><span class="icon">🏷️</span> <span>Crear Categoría</span></a></li>
+      <li><a routerLink="/usuarios/crear"><span class="icon">👤</span> <span>Crear Usuario</span></a></li>
+    </ul>
+  </nav>
+</aside>
+
+  <main class="contenido-principal">
+    <router-outlet></router-outlet>
+  </main>
+</div>
