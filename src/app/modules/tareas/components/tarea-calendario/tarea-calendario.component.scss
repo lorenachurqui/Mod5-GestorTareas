@@ -1,0 +1,48 @@
+.titulo-calendario {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.filtros-fecha {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+.filtros-fecha label {
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+}
+
+.error-fechas {
+  color: #c0392b;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.grupo-fecha {
+  margin-bottom: 2rem;
+}
+
+.encabezado-fecha {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.5rem;
+}
+
+.card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.card-body p {
+  margin: 0.3rem 0;
+}

@@ -23,8 +23,7 @@ import { EstadoPersona, ESTADOS_PERSONA } from '../../../shared/constants/estado
 export class PersonaService {
   private readonly collectionName = FIRESTORE_COLLECTIONS.PERSONAS;
   private firestore = inject(Firestore);
-  //private coleccion = collection(this.firestore, this.collectionName);
-
+  
   getPersonaById(id: string): Observable<Persona> {
     const docRef = doc(this.firestore, `${this.collectionName}/${id}`);
     return docData(docRef, { idField: 'id' }) as Observable<Persona>;

@@ -1,0 +1,25 @@
+<div *ngIf="tarea$ | async as tareas; else cargando">
+  <div *ngIf="tareas.length > 0; else sinDatos" class="lista-tareas">
+    <div *ngFor="let tarea of tareas" class="item-tarea card">
+      <div class="card-body">
+        <p><strong>Nombre: </strong> <span>{{ tarea.titulo }}</span></p>
+        <p><strong>Fecha Entrega: </strong> <span>{{ tarea.fechaEntrega }}</span></p>
+        <p><strong>Descripción: </strong> <span>{{ tarea.descripcion }}</span></p>
+        <p><strong>Categoría: </strong> <span>{{ tarea.categoriaNombre || 'Sin categoría' }}</span></p>
+        <p><strong>Estado: </strong> <span>{{ tarea.estado }}</span></p>
+      </div>
+      <div class="card-actions">
+        <button (click)="eliminar(tarea.id)" class="btn-eliminar">🗑️ Eliminar</button>
+        <a [routerLink]="['/tareas/editar', tarea.id]" role="button" class="btn-editar">✏️ Editar</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #cargando>
+  <p>🔄 Cargando tareas...</p>
+</ng-template>
+
+<ng-template #sinDatos>
+  <p>⚠️ No hay tareas registradas.</p>
+</ng-template>

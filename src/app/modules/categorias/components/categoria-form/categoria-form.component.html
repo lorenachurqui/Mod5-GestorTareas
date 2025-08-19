@@ -1,0 +1,36 @@
+<div class="form-card">
+  <h2 class="form-title">{{ categoriaInicial?.id ? 'Editar Categoría' : 'Crear datos de Categoría' }}</h2>
+  <form [formGroup]="categoriaForm" (ngSubmit)="guardar()" novalidate class="formulario-categoria">
+    <div class="form-group">
+      <label for="nombre">Nombre</label>
+      <input id="nombre" type="text" formControlName="nombre" class="form-control" />
+      <div *ngIf="categoriaForm.get('nombre')?.invalid && categoriaForm.get('nombre')?.touched" class="text-danger">
+        El nombre es obligatorio.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="abreviatura">Abreviatura</label>
+      <input id="abreviatura" type="text" formControlName="abreviatura" class="form-control" />
+      <div *ngIf="categoriaForm.get('abreviatura')?.invalid && categoriaForm.get('abreviatura')?.touched" class="text-danger">
+        La abreviatura es obligatoria.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="descripcion">Descripción</label>
+      <textarea id="descripcion" formControlName="descripcion" class="form-control" rows="3"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="estado">Estado:</label>
+      <select id="estado" formControlName="estado">
+        <option *ngFor="let estado of estadosDisponibles" [value]="estado">{{ estado }}</option>
+      </select>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" [disabled]="categoriaForm.invalid" class="btn-guardar">Guardar categoría</button>
+    </div>
+  </form>
+</div>

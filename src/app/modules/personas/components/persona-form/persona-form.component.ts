@@ -38,14 +38,6 @@ export class PersonaFormComponent implements OnInit {
     estado: [ESTADOS_PERSONA[0], Validators.required]
   });
 
-  /*
-ngOnInit(): void {
-  setTimeout(() => {
-    if (this.personaInicial) {
-      this.personaForm.patchValue(this.personaInicial);
-    }
-  });
-}*/
 ngOnInit(): void {
   if (this.personaInicial) {
     this.personaForm.patchValue(this.personaInicial);
@@ -87,9 +79,5 @@ guardar(): void {
         });
     }
   }
-
-
-
-
 
 }

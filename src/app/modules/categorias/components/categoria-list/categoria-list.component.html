@@ -1,0 +1,24 @@
+<div *ngIf="categoria$ | async as categorias; else cargando">
+  <div *ngIf="categorias.length > 0; else sinDatos" class="lista-categorias">
+    <div *ngFor="let categoria of categorias" class="item-categoria card">
+      <div class="card-body">
+        <p><strong>Nombre: </strong> <span>{{ categoria.nombre }}</span></p>
+        <p><strong>Abreviatura: </strong> <span>{{ categoria.abreviatura }}</span></p>
+        <p><strong>Descripción: </strong> <span>{{ categoria.descripcion }}</span></p>
+        <p><strong>Estado: </strong> <span>{{ categoria.estado }}</span></p>
+      </div>
+      <div class="card-actions">
+        <button (click)="eliminar(categoria.id)" class="btn-eliminar">🗑️ Eliminar</button>
+        <a [routerLink]="['/categorias/editar', categoria.id]" role="button" class="btn-editar">✏️ Editar</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #cargando>
+  <p>🔄 Cargando categorias...</p>
+</ng-template>
+
+<ng-template #sinDatos>
+  <p>⚠️ No hay categorias registradas.</p>
+</ng-template>

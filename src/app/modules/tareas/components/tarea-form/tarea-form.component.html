@@ -1,0 +1,59 @@
+<div class="form-card">
+  <h2 class="form-title">{{ tareaInicial?.id ? 'Editar Tarea' : 'Crear Tarea' }}</h2>
+
+  <form [formGroup]="tareaForm" (ngSubmit)="guardar()" novalidate class="formulario-tarea">
+
+    <div class="form-group">
+      <label for="titulo">Título</label>
+      <input id="titulo" type="text" formControlName="titulo" class="form-control" />
+      <div *ngIf="tareaForm.get('titulo')?.invalid && tareaForm.get('titulo')?.touched" class="text-danger">
+        El título es obligatorio.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="descripcion">Descripción</label>
+      <textarea id="descripcion" formControlName="descripcion" class="form-control" rows="3"></textarea>
+      <div *ngIf="tareaForm.get('descripcion')?.invalid && tareaForm.get('descripcion')?.touched" class="text-danger">
+        La descripción es obligatoria.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="fechaEntrega">Fecha de Entrega</label>
+      <input id="fechaEntrega" type="date" formControlName="fechaEntrega" class="form-control" />
+      <div *ngIf="tareaForm.get('fechaEntrega')?.invalid && tareaForm.get('fechaEntrega')?.touched" class="text-danger">
+        La fecha de entrega es obligatoria.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="categoriaId">Categoría / Materia</label>
+      <select id="categoriaId" formControlName="categoriaId" class="form-control">
+        <option value="">Seleccione una categoría</option>
+        <option *ngFor="let cat of categorias" [value]="cat.id">{{ cat.nombre }}</option>
+      </select>
+      <div *ngIf="tareaForm.get('categoriaId')?.invalid && tareaForm.get('categoriaId')?.touched" class="text-danger">
+        La categoría es obligatoria.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="estado">Estado</label>
+      <select id="estado" formControlName="estado" class="form-control">
+        <option *ngFor="let estado of estadosDisponibles" [value]="estado">{{ estado }}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="prioridad">Prioridad</label>
+      <select id="prioridad" formControlName="prioridad" class="form-control">
+        <option *ngFor="let nivel of prioridadesDisponibles" [value]="nivel">{{ nivel }}</option>
+      </select>
+    </div>
+    <div class="form-actions">
+      <button type="submit" [disabled]="tareaForm.invalid" class="btn-guardar">Guardar tarea</button>
+    </div>
+
+  </form>
+</div>

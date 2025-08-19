@@ -6,10 +6,9 @@
         <h3>{{ persona.nombre }}</h3>
       </div>
       <div class="card-body">
-        <p><strong>ID:</strong> <span>{{ persona.id }}</span></p>
-        <p><strong>Correo:</strong> <span>{{ persona.correo }}</span></p>
-        <p><strong>Teléfono:</strong> <span>{{ persona.telefono }}</span></p>
-        <p><strong>Estado:</strong> <span>{{ persona.estado }}</span></p>
+        <p><strong>Correo: </strong> <span>{{ persona.correo }}</span></p>
+        <p><strong>Teléfono: </strong> <span>{{ persona.telefono }}</span></p>
+        <p><strong>Estado: </strong> <span>{{ persona.estado }}</span></p>
       </div>
       <div class="card-actions">
         <button (click)="eliminar(persona.id)" class="btn-eliminar">🗑️ Eliminar</button>

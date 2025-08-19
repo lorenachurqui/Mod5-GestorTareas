@@ -1,0 +1,39 @@
+<h2 class="titulo-calendario">📅 Calendario de tareas</h2>
+<div class="filtros-fecha">
+  <label>
+    Fecha inicio:
+    <input type="date" [(ngModel)]="fechaInicio" (change)="actualizarTareas()" />
+  </label>
+
+  <label>
+    Fecha fin (opcional):
+    <input type="date" [(ngModel)]="fechaFin" (change)="actualizarTareas()" />
+  </label>
+</div>
+
+<div *ngIf="errorRangoFechas" class="error-fechas">
+  {{ errorRangoFechas }}
+</div>
+
+
+<div *ngIf="tareasPorFecha$ | async as tareasPorFecha; else cargando">
+  <div *ngIf="tareasPorFecha | keyvalue as fechas">
+    <div *ngFor="let grupo of fechas" class="grupo-fecha">
+      <h3 class="encabezado-fecha">Fecha: {{ grupo.key }}</h3>
+
+      <div *ngFor="let tarea of grupo.value" class="item-tarea card">
+        <div class="card-body">
+          <p><strong>Título:</strong> {{ tarea.titulo }}</p>
+          <p><strong>Descripción:</strong> {{ tarea.descripcion }}</p>
+          <p><strong>Categoría:</strong> {{ tarea.categoriaNombre || 'Sin categoría' }}</p>
+          <p><strong>Prioridad:</strong> {{ tarea.prioridad }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #cargando>
+  <p>🔄 Cargando tareas agrupadas por fecha...</p>
+</ng-template>
+
