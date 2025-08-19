@@ -1,0 +1,85 @@
+[debug] [2025-08-19T18:50:42.178Z] ----------------------------------------------------------------------
+[debug] [2025-08-19T18:50:42.204Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\lomena\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only hosting --debug
+[debug] [2025-08-19T18:50:42.205Z] CLI Version:   14.12.0
+[debug] [2025-08-19T18:50:42.205Z] Platform:      win32
+[debug] [2025-08-19T18:50:42.205Z] Node Version:  v22.15.0
+[debug] [2025-08-19T18:50:42.206Z] Time:          Tue Aug 19 2025 14:50:42 GMT-0400 (hora de Bolivia)
+[debug] [2025-08-19T18:50:42.207Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-08-19T18:50:42.807Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-08-19T18:50:42.811Z] > authorizing via signed-in user (lorenachurqui@gmail.com)
+[debug] [2025-08-19T18:50:42.812Z] [iam] checking project gestortareas-12345 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-08-19T18:50:42.815Z] Checked if tokens are valid: true, expires at: 1755632467213
+[debug] [2025-08-19T18:50:42.815Z] Checked if tokens are valid: true, expires at: 1755632467213
+[debug] [2025-08-19T18:50:42.819Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/gestortareas-12345:testIamPermissions [none]
+[debug] [2025-08-19T18:50:42.820Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/gestortareas-12345:testIamPermissions x-goog-quota-user=projects/gestortareas-12345
+[debug] [2025-08-19T18:50:42.821Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gestortareas-12345:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-08-19T18:50:44.080Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/gestortareas-12345:testIamPermissions 200
+[debug] [2025-08-19T18:50:44.081Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gestortareas-12345:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-08-19T18:50:44.083Z] Checked if tokens are valid: true, expires at: 1755632467213
+[debug] [2025-08-19T18:50:44.084Z] Checked if tokens are valid: true, expires at: 1755632467213
+[debug] [2025-08-19T18:50:44.086Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/gestortareas-12345 [none]
+[debug] [2025-08-19T18:50:44.579Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/gestortareas-12345 200
+[debug] [2025-08-19T18:50:44.579Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/gestortareas-12345 {"projectId":"gestortareas-12345","projectNumber":"1048851892026","displayName":"GestorTareas","name":"projects/gestortareas-12345","resources":{"hostingSite":"gestortareas-12345"},"state":"ACTIVE","etag":"1_f7e116f4-43ba-4870-8e79-f9c4b33a723f"}
+[info] 
+[info] === Deploying to 'gestortareas-12345'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2025-08-19T18:50:44.592Z] Checked if tokens are valid: true, expires at: 1755632467213
+[debug] [2025-08-19T18:50:44.592Z] Checked if tokens are valid: true, expires at: 1755632467213
+[debug] [2025-08-19T18:50:44.593Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/gestortareas-12345/versions [none]
+[debug] [2025-08-19T18:50:44.593Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/gestortareas-12345/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2025-08-19T18:50:45.836Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/gestortareas-12345/versions 200
+[debug] [2025-08-19T18:50:45.844Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/gestortareas-12345/versions {"name":"projects/1048851892026/sites/gestortareas-12345/versions/8a14078b9089fea1","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[gestortareas-12345]: beginning deploy... 
+[info] i  hosting[gestortareas-12345]: found 27 files in dist/proyecto-gestor-tarea/browser 
+[debug] [2025-08-19T18:50:45.914Z] [hosting] uploading with 200 concurrency
+[debug] [2025-08-19T18:50:45.935Z] Checked if tokens are valid: true, expires at: 1755632467213
+[debug] [2025-08-19T18:50:45.944Z] Checked if tokens are valid: true, expires at: 1755632467213
+[debug] [2025-08-19T18:50:45.964Z] [hosting] hash cache [ZGlzdFxwcm95ZWN0by1nZXN0b3ItdGFyZWFcYnJvd3Nlcg] stored for 27 files
+[debug] [2025-08-19T18:50:45.993Z] [hosting][hash queue][FINAL] {"max":8,"min":2,"avg":2,"active":0,"complete":27,"success":27,"errored":0,"retried":0,"total":27,"elapsed":67}
+[debug] [2025-08-19T18:50:45.995Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/1048851892026/sites/gestortareas-12345/versions/8a14078b9089fea1:populateFiles [none]
+[debug] [2025-08-19T18:50:45.998Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/1048851892026/sites/gestortareas-12345/versions/8a14078b9089fea1:populateFiles {"files":{"/styles-5INURTSO.css":"46b50c321b39e89a491b6727a01628c34245605a30beb3e7414c5e01cff90e6e","/polyfills-B6TNHZQ6.js":"a87c0954a6184a0e0d27cd02df3fe43c02f121416dc1d71923148f1dbbdc377a","/main-ATNICMLM.js":"d3f580258ebb556777604fdc2783013ec44686b06676eb6a877e8794f80bfe07","/index.html":"d732d78e12dd6747ed98b4fbaea53cb23e64f116508ecd05251be343c5df6b51","/favicon.ico":"a905b13e228420df3dbe746dfb656d37a49736494c0737d00e007c8dc7319912\r","/chunk-Z4JNTA7U.js":"2da6acb2389707c304dce32902394a0cd164f9e522f3ee5bbb727436b758bcd5","/chunk-UUSUC3CZ.js":"2799bf791d9a5dc525779793c049fe5637b64c6e4fadb22caa577ca2a111e7fd","/chunk-UDZ2U7A6.js":"4bd13218a64b5c5f181a8e15dd66d333946bbfaf1bff18cc539f6965b94f05c4","/chunk-STJ6JR4A.js":"221dd6c8f2bdf759dc0716cbf65c68ed2ddd18807945e712b5a8d5cdb41efe6d","/chunk-SNKPVPSQ.js":"339976418be78864069116b1ef7004252c6629173e048dc6da97a497fcd6af56","/chunk-R62SJJBM.js":"f49806928fe288f6ceb3f5dc8c6c11d2e6b8bac717373e729416157fe4bcef13","/chunk-PMX3AOV2.js":"e2d6948b39e97e1975ae58a0978a88cf5b220d557b6458cc83937954c6bff174","/chunk-OQNZRQQ3.js":"3e8f97b459a2c2d780afc2dba5f3f03934ce2e8084b06a617e3c3ba921d532f8","/chunk-N3AJ75UQ.js":"91f523a00ce5b879ca0296feda8968763774b774f15a3a11dcaa5c300f443b0d","/chunk-L5CONZNV.js":"e27c65afa9e2214648438a95996308356d8f42ee9a054610de49e253cd4133b0","/chunk-JDCOHEPM.js":"8714eaf4b221a52dcf3266220e549a7980f0dcf71bd773c425c80854eb0c7758","/chunk-GP43Q4BX.js":"06813e2030802179fbce0dc8c12333d3f73d909f92255aa3b0ca09c7164668cc","/chunk-EPUOWTL7.js":"4cdf07496a813373f0401df73ddeb2f90f645561427270c3ef6ba5c3002c5555","/chunk-CBZBQ24Z.js":"5ad80e795f92d1033ccf122b04a66ae1053517bedf89d76ce9841abbc6615a97","/chunk-BDQ2DNMA.js":"a55ad880861fcd1ba58ca1c3162b8ca11557937a27c23e6a771170599f5e6c05","/chunk-B7POAF5K.js":"4f32261fddf7c54a1b12d0c97d0a66f9fab375fd14fcd3bcf76b78da626cde3d","/chunk-AMOJRJCH.js":"450796cf7b30ba7745699368df2964884fe4e86a94ccd1c55fdfa905dec3d78a","/chunk-7ADVUJL4.js":"cf17257eefcb4a59ac236f5ea8179696b04e9ed8f921d5d7e68db119ce849406","/chunk-75SPVECI.js":"acd3229fa3852500ca50648204adaae3d7c96504003d464fcfa80a454ac899bd","/chunk-6AP6WH6F.js":"c31e32bef8e3bc6de06e03c787e9a262e0f681135a4017135204772fc83aec61","/chunk-2FJE5BJS.js":"6297060c9bb9101acbfd94abd6371f3d71aaab9a7fdb9f28b156d6d1a1494a49","/assets/img/logo.webp":"2bf1ffbfda020ca24ab7788e24d86f38b2d6ea6900293f0a1624ce84432226ae\r"}}
+[debug] [2025-08-19T18:50:46.301Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/1048851892026/sites/gestortareas-12345/versions/8a14078b9089fea1:populateFiles 200
+[debug] [2025-08-19T18:50:46.302Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/1048851892026/sites/gestortareas-12345/versions/8a14078b9089fea1:populateFiles {"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/gestortareas-12345/versions/8a14078b9089fea1/files"}
+[debug] [2025-08-19T18:50:46.303Z] [hosting][populate queue][FINAL] {"max":369,"min":369,"avg":369,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":369}
+[debug] [2025-08-19T18:50:46.304Z] [hosting] uploads queued: 0
+[debug] [2025-08-19T18:50:46.304Z] [hosting][upload queue][FINAL] {"max":0,"min":9999999999,"avg":0,"active":0,"complete":0,"success":0,"errored":0,"retried":0,"total":0,"elapsed":1755629446304}
+[info] i  hosting: upload complete 
+[info] +  hosting[gestortareas-12345]: file upload complete 
+[debug] [2025-08-19T18:50:46.306Z] [hosting] deploy completed after 444ms
+[debug] [2025-08-19T18:50:46.306Z] [
+  {
+    "config": {
+      "public": "dist/proyecto-gestor-tarea/browser",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "gestortareas-12345"
+    },
+    "version": "projects/1048851892026/sites/gestortareas-12345/versions/8a14078b9089fea1"
+  }
+]
+[info] i  hosting[gestortareas-12345]: finalizing version... 
+[debug] [2025-08-19T18:50:46.313Z] Checked if tokens are valid: true, expires at: 1755632467213
+[debug] [2025-08-19T18:50:46.314Z] Checked if tokens are valid: true, expires at: 1755632467213
+[debug] [2025-08-19T18:50:46.315Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/gestortareas-12345/versions/8a14078b9089fea1 updateMask=status%2Cconfig
+[debug] [2025-08-19T18:50:46.315Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/gestortareas-12345/versions/8a14078b9089fea1 {"status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]}}
+[debug] [2025-08-19T18:50:46.561Z] <<< [apiv2][status] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/gestortareas-12345/versions/8a14078b9089fea1 200
+[debug] [2025-08-19T18:50:46.562Z] <<< [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/gestortareas-12345/versions/8a14078b9089fea1 {"name":"projects/1048851892026/sites/gestortareas-12345/versions/8a14078b9089fea1","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2025-08-19T18:50:47.252855Z","createUser":{"email":"lorenachurqui@gmail.com"},"finalizeTime":"2025-08-19T18:50:48.197238Z","finalizeUser":{"email":"lorenachurqui@gmail.com"}}
+[debug] [2025-08-19T18:50:46.563Z] [hosting] finalized version for gestortareas-12345:[object Object]
+[info] +  hosting[gestortareas-12345]: version finalized 
+[info] i  hosting[gestortareas-12345]: releasing new version... 
+[debug] [2025-08-19T18:50:46.565Z] Checked if tokens are valid: true, expires at: 1755632467213
+[debug] [2025-08-19T18:50:46.565Z] Checked if tokens are valid: true, expires at: 1755632467213
+[debug] [2025-08-19T18:50:46.566Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/gestortareas-12345/channels/live/releases versionName=projects%2F1048851892026%2Fsites%2Fgestortareas-12345%2Fversions%2F8a14078b9089fea1
+[debug] [2025-08-19T18:50:46.568Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/gestortareas-12345/channels/live/releases {}
+[debug] [2025-08-19T18:50:46.879Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/gestortareas-12345/channels/live/releases 200
