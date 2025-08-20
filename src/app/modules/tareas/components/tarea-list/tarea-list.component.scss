@@ -10,9 +10,9 @@
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  padding: 1.5rem;
-  min-width: 280px;
-  max-width: 320px;
+  padding: 1.0rem;
+  min-width: 250px;
+  max-width: 340px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,7 +38,7 @@
 
 .card-body p {
   margin: 0.3rem 0;
-  font-size: 0.98rem;
+  font-size: 0.92rem;
 }
 
 .card-actions {
@@ -47,11 +47,11 @@
   justify-content: center;
 }
 
-.btn-editar, .btn-eliminar {
+.btn-editar, .btn-eliminar , .btn-asignar {
   padding: 0.4rem 1rem;
   border-radius: 6px;
   border: none;
-  font-size: 1rem;
+  font-size: 0.8rem;
   cursor: pointer;
   transition: background 0.2s;
 }
@@ -71,4 +71,13 @@
 }
 .btn-eliminar:hover {
   background: #b71c1c;
+}
+
+.btn-asignar {
+  background: #1a7c7c;
+  color: #fff;
+  text-decoration: none;
+}
+.btn-asignar:hover {
+  background: #156969;
 }

@@ -7,6 +7,10 @@ import { Categoria } from '../../../categorias/models/categoria.model';
 import { Observable, combineLatest, map } from 'rxjs';
 import { AsyncPipe, NgFor, NgIf, KeyValuePipe } from '@angular/common'
 import { FormsModule } from '@angular/forms';
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
+import { ViewChild, ElementRef } from '@angular/core';
+
 
 @Component({
   selector: 'app-tarea-calendario',
@@ -18,6 +22,8 @@ import { FormsModule } from '@angular/forms';
 export class TareaCalendarioComponent implements OnInit {
   private tareaService = inject(TareaService);
   private categoriaService = inject(CategoriaService);
+ @ViewChild('contenidoExportable', { static: false }) contenido!: ElementRef;
+
 
   tareasPorFecha$!: Observable<Record<string, Tarea[]>>;
 
@@ -64,29 +70,31 @@ export class TareaCalendarioComponent implements OnInit {
       })
     );
   }
+
+  exportarPDF(): void {
+  const elemento = this.contenido.nativeElement;
+
+  html2canvas(elemento, {
+    scale: 3,
+    useCORS: true
+  }).then(canvas => {
+    const imgData = canvas.toDataURL('image/png');
+    const pdf = new jsPDF('p', 'mm', 'a4');
+
+    const pageWidth = pdf.internal.pageSize.getWidth();
+    const pageHeight = pdf.internal.pageSize.getHeight();
+
+    const margin = 10; // Margen en milímetros
+
+    const imgWidth = pageWidth - margin * 2;
+    const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+    const posX = margin;
+    const posY = margin;
+
+    pdf.addImage(imgData, 'PNG', posX, posY, imgWidth, imgHeight);
+    pdf.save('calendario-tareas.pdf');
+  });
 }
 
-
- /*  ngOnInit(): void {
-    this.tareasPorFecha$ = combineLatest([
-      this.tareaService.getTareas(),
-      this.categoriaService.getCategorias()
-    ]).pipe(
-      map(([tareas, categorias]) => {
-        const tareasConCategoria = tareas.map(t => ({
-          ...t,
-          categoriaNombre: categorias.find(c => c.id === t.categoriaId)?.nombre || 'Sin categoría'
-        }));
-
-        const agrupadas: Record<string, Tarea[]> = {};
-        tareasConCategoria.forEach(t => {
-          const fecha = t.fechaEntrega;
-          if (!agrupadas[fecha]) agrupadas[fecha] = [];
-          agrupadas[fecha].push(t);
-        });
-
-        return agrupadas;
-      })
-    );
-  }
-}*/
+}

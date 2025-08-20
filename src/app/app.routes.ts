@@ -72,6 +72,14 @@ export const routes: Routes = [
         title: 'Editar Tarea'
       },
       {
+        path: 'tareas/asignar/:id',
+        loadComponent: () => 
+          import('./modules/tareas/components/tarea-asignar/tarea-asignar.component')
+        .then(m => m.TareaAsignarComponent),
+        title: 'Asignar Tarea'
+      },
+
+      {
         path: 'tareas/calendario',
         loadComponent: () =>
           import('./modules/tareas/components/tarea-calendario/tarea-calendario.component')

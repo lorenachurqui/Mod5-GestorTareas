@@ -1,0 +1,29 @@
+<h2 class="titulo-tarea">📝 Tarea: {{ tarea.titulo }}</h2>
+
+<table class="tabla-asignacion">
+  <thead>
+    <tr>
+      <th>Asignar</th>
+      <th>Nombre completo</th>
+      <th>Teléfono</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let persona of personasAsignables">
+      <td>
+        <input type="checkbox" [(ngModel)]="persona.asignado" />
+      </td>
+      <td>{{ persona.nombre }} {{ persona.apellidoPaterno }} {{ persona.apellidoMaterno }}</td>
+      <td>{{ persona.telefono }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<button (click)="guardarAsignaciones()">Guardar asignaciones</button>
+
+<p *ngIf="asignacionExitosa" class="mensaje-confirmacion">
+  ✅ Las asignaciones fueron registradas correctamente. Redirigiendo...
+</p>
+
+
+

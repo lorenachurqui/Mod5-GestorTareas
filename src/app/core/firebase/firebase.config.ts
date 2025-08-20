@@ -10,5 +10,6 @@ export const firebaseConfig = {
   projectId: 'gestortareas-12345', // Identificador único del proyecto Firebase
   storageBucket: 'gestortareas-12345.firebasestorage.app', // Para subir o leer archivos si usás Firebase Storage
   messagingSenderId: '1048851892026', // Identificador de servicio de notificaciones (si aplica)
-  appId: '1:1048851892026:web:4661f42b3305882d723203' // Identificador de la app registrado en Firebase
+  appId: '1:1048851892026:web:4661f42b3305882d723203',  // Identificador de la app registrado en Firebase
+  measurementId: "G-YV4EY2TTKE"
 };

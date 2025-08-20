@@ -6,7 +6,7 @@ import { provideStorage, getStorage } from '@angular/fire/storage';
 
 
 import { AppComponent } from './app/app.component';
-import { routes } from './app/app.routes'; // o la ruta real de tus rutas
+import { routes } from './app/app.routes'; 
 import { firebaseConfig } from './app/core/firebase/firebase.config';
 
 bootstrapApplication(AppComponent, {

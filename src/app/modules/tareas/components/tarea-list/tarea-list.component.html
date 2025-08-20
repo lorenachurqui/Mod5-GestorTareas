@@ -11,6 +11,7 @@
       <div class="card-actions">
         <button (click)="eliminar(tarea.id)" class="btn-eliminar">🗑️ Eliminar</button>
         <a [routerLink]="['/tareas/editar', tarea.id]" role="button" class="btn-editar">✏️ Editar</a>
+        <a [routerLink]="['/tareas/asignar', tarea.id]" role="button" class="btn-asignar">📌 Asignar</a>
       </div>
     </div>
   </div>
